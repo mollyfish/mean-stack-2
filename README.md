@@ -1,4 +1,4 @@
-# Week Seven - MEAN Stack II
+# Week Seven - MEAN Stack 2
 
 Last week we focussed on CRUD with Mongo, Node, and Angular. This week we're going to focus on using Angular to build a strictly client-side app, leveraging third-party APIs. You'll be expected to build on knowledge you've already learned and produce a "mobile" weather app for your assignment this week.
 
