@@ -1,39 +1,38 @@
-var dest = "./build";
+var dest = './public';
 var src = './src';
 
 module.exports = {
   javascript: {
-    src: src + '/js/**/*.js',
+    src: src + '/app/**/*.js',
     dest: dest + '/js/',
-    entry: src + '/js/app.js',
-    outputFilename: 'app.js'
-  },
-  assets: {
-    src: src + "/assets/**/*",
-    dest: dest + '/assets/'
+    entryPoint: src + '/webpack-entry.js',
+    packedFile: 'packed.js'
   },
   sass: {
-    src: src + "/css/**/*.{sass,scss}",
-    dest: dest + '/css/',
+    src: src + '/styles/**/*.{sass,scss}',
+    dest: dest + '/styles/',
     settings: {
-      indentedSyntax: true, // Enable .sass syntax!
+      indentedSyntax: true,
     }
   },
   html: {
-    src: src + '/**/*.html',
-    dest: dest
+    src: src + "/app/**/*.html",
+    dest: dest + "/views/",
   },
   server: {
     src: dest,
-    livereload: true,
+    livereload: false,
     directoryListing: false,
     open: false,
     port: 9000
   },
   production: {
-    cssSrc: dest + '/css/*.css',
-    jsSrc: dest + '/js/*.js',
+    cssSrc: dest + '/styles/*.css',
+    jsSrc: dest + '/*.js',
     cssDest: dest + '/css/',
-    jsDest: dest + '/js/',
+    jsDest: dest + '/js/'
+  },
+  ngConfig: {
+    dest: dest + '/js',
   }
 };

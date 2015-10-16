@@ -1,0 +1,17 @@
+<form class="gist-form" id="edit-gist" ng-submit="saveEdits()">
+  <h1>Edit a file in "{{gist.description}}"</h1>
+  <p>Current files:</p>
+  <ul>
+    <li ng-repeat="file in gist.files">{{file.filename}}</li>
+  </ul>
+  <label>Description for this Gist:</label>
+  <input type="text" placeholder="Description" ng-model="gist.description" id="description">
+  <label>File contents:</label>
+  <div ng-repeat="file in gist.files">
+    <p>{{file.filename}}</p>
+    <textarea form="edit-gist" id="content" rows="5" cols="65">{{file.content}}</textarea>
+  </div>
+  <label>File names:</label>
+  <input type="text" ng-repeat="file in gist.files" placeholder="{{file.filename}}" id="filename">
+  <button type="submit" name="Submit" class="btn btn__text btn--dark">Submit</button>
+</form>

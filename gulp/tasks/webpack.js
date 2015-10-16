@@ -3,12 +3,11 @@ var config = require('../config').javascript;
 var webpack = require('webpack-stream');
 
 gulp.task('webpack', function(callback) {
-  return gulp.src(config.entry)
+  return gulp.src(config.entryPoint)
   .pipe(webpack({
     output: {
-      filename: config.outputFilename
+      filename: config.packedFile
     }
   }))
   .pipe(gulp.dest(config.dest));
 });
-
