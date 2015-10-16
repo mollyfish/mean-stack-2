@@ -3,7 +3,7 @@ require('angular-route');
 
 (function () {
   'use strict';
-  var app = angular.module('blog',['ngRoute', 'blog.config']);
+  var app = angular.module('blog',['ngRoute']);
   var part1 = '9e036a59681409c5f542';
   var part2 = '72e86d69d37a005ad650';
   var newGist = {};
@@ -32,7 +32,7 @@ require('angular-route');
     });
   });
 
-  app.service('dataService', function($http, token) {
+  app.service('dataService', function($http) {
     delete $http.defaults.headers.common['X-Requested-With'];
     this.getGistList = function() {
         return $http({
